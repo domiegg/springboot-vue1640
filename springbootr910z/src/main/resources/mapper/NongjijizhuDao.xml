@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.NongjijizhuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.NongjijizhuEntity" id="nongjijizhuMap">
+        <result property="jizhuzhanghao" column="jizhuzhanghao"/>
+        <result property="jizhuxingming" column="jizhuxingming"/>
+        <result property="mima" column="mima"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="nianling" column="nianling"/>
+        <result property="shoujihao" column="shoujihao"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.NongjijizhuVO" >
+		SELECT * FROM nongjijizhu  nongjijizhu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.NongjijizhuVO" >
+		SELECT  nongjijizhu.* FROM nongjijizhu  nongjijizhu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.NongjijizhuView" >
+
+		SELECT  nongjijizhu.* FROM nongjijizhu  nongjijizhu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.NongjijizhuView" >
+		SELECT * FROM nongjijizhu  nongjijizhu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
